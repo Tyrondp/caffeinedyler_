@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+body {
+    background-color: black;
+    background-image: url("dyler.jpg");
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    background-position: center 0%;
+    animation-name: cambioColorFondo;
+    animation-duration: 10s;
+    animation-iteration-count: infinite; 
+}
+
+@keyframes cambioColorFondo {
+    0% { background-color: #000000e6; } 
+    25% { background-color: #000000de; } 
+    50% { background-color: #000000e9; } 
+    100% { background-color: #000000e6; }
+}
+
+div {
+    max-width: 900px;
+    margin: auto;
+    background-color: #333;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.menu {
+    display: inline;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0.8; 
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu > li:hover {
+    background-color: rgb(242, 255, 0);;
+}
+
+.submenu {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.menu li:hover {
+    background-color: rgba(0, 0, 0, 0.432);
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
+#textoMostrado {
+    margin-top: 10px;
+    font-size: 14px;
+    background-color: rgba(240, 248, 255, 0.708);
+}
+
+.titulo {
+    padding: 15px 15px 15px 20px;
+    margin-top: -10px;
+    background-color: rgb(242, 255, 0);
+    color: rgb(0, 0, 0);
+    opacity: 0.8; /* Ajusta la opacidad del título */
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(240, 248, 255, 0.708);
+}
+
+.galeria img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu ul li a:hover {
+    color: rgb(242, 255, 0);;
+}
+
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#textoMostrado {
+    text-align: center;
+}
+
+.img-mask {
+    width: 300px; 
+    height: 300px; 
+    overflow: hidden; 
+    border-radius: 50%; 
+    border: 2px solid #000000; 
+}
+.img-mask img {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}
+.gif-link {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin: 10px;
+}
+.designer-img {
+    max-width:300px; 
+    height: auto; 
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    border: 2px solid #000000; 
+}
+
+.designer-img:hover {
+    transform: scale(1.1); 
+}
+
+#marquee-container {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(51, 51, 51, 0.7); 
+    overflow: hidden; 
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+}
+
+#marquee {
+    color: white;
+    font-size: 18px;
+    line-height: 50px; 
+    white-space: nowrap; 
+    animation: marquee 15s linear infinite;
+    animation-iteration-count: infinite; 
+}
+
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+#toggleMarqueeBtn {
+    background-color: white; 
+    color: rgb(0, 0, 0); 
+    padding: 10px 20px;
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin-top: 10px;
+}
+
+#toggleMarqueeBtn:hover {
+    background-color: rgba(255, 255, 255, 0.729); 
+}
+
+#nombreForm {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 100px;
+    width: 100%;
+}
+
+#nombreForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#nombreForm input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#nombreForm button[type="submit"] {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nombreForm button[type="submit"]:hover {
+    background-color: #ffffffcb;
+}
+@media screen and (max-width: 767px) {
+}

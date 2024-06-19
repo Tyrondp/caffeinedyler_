@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas Energéticas Ghost</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="index.css"> <!-- Enlace al archivo CSS separado -->
+</head>
+<body>
+    <div class="titulo">
+        <h1>Bebidas Energéticas Ghost</h1>
+    </div>
+    <div class="menu-toggle"></div>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#"><i class="fas fa-flask"></i> Bebidas</a>
+                <ul class="submenu">
+                    <li><a href="#" data-texto="1">Ghost Energy Drink</a></li>
+                    <li><a href="#" data-texto="2">C4 Energy Drink</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+                <ul class="submenu">
+                    <li><a href="#" data-texto="3">Vendedor</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-info-circle"></i> Más Información</a>
+                <ul class="submenu">
+                    <li><a href="#" data-texto="4">Créditos</a></li>
+                    <li><a href="#" data-texto="5">Información sobre las bebidas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br><br><br><br>
+    <div id="textoMostrado"></div>
+    <div id="marquee-container">
+        <marquee id="marquee" behavior="scroll" direction="left">¡Gracias por visitar nuestra página! Disfruta de nuestras bebidas energéticas.</marquee> 
+    </div>
+    <script>
+        const submenus = document.querySelectorAll('.submenu a');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const marqueeContainer = document.getElementById('marquee-container');
+        marqueeContainer.style.display = 'none'; 
+
+        // Función para mostrar/ocultar el menú en dispositivos móviles
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+
+        // Función para ocultar el menú al seleccionar una opción
+        submenus.forEach(submenu => {
+            submenu.addEventListener('click', e => {
+                e.preventDefault();
+                const texto = e.target.getAttribute('data-texto');
+                switch (texto) {
+                    case "1":
+                        document.getElementById("textoMostrado").innerHTML = `
+                            <center>
+                            <div class="galeria">
+                                <img src="ghost1.jpg" alt="Ghost Energy 1">
+                                <img src="ghost2.jpg" alt="Ghost Energy 2">
+                                <img src="ghost3.webp" alt="Ghost Energy 3">
+                            </div>
+                             <h2>Ghost Energy Drink</h2><br>
+                            <h3>Precio: $99.99</h3><br>
+                            <p>Descripción:Ghost Energy Drink ofrece un impulso de energía limpio y duradero con ingredientes naturales y sin azúcar. Perfecto para mantenerte alerta y enfocado en cualquier actividad.</p>
+                            </center>
+                        `;
+                        marqueeContainer.style.display = 'none'; 
+                        break;
+                    case "2":
+                        document.getElementById("textoMostrado").innerHTML = `
+                            <center>
+                            <div class="galeria">
+                                <img src="c4.png" alt="C4 Energy 1">
+                                <img src="c4s.png" alt="C4 Energy 2">
+                            </div>
+                              <h2>C4 Energy Drink</h2><br>
+                            <h3>Precio: $99.99</h3><br>
+                            <p>Descripción:C4 Energy Drink proporciona energía y enfoque con su fórmula de beta-alanina y cafeína. Ideal para mejorar el rendimiento en entrenamientos y actividades intensas.</p>
+                            </center>
+                        `;
+                        marqueeContainer.style.display = 'none'; 
+                        break;
+                    case "3":
+                        document.getElementById("textoMostrado").innerHTML = `
+                            <center>
+                            <h2>Vendedor</h2><br>
+                            <a href="https://www.instagram.com/sebastian17_galaz?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw==" target="_blank">
+                                <div class="img-mask">
+                                    <img src="vendedor.jpg" alt="Vendedor">
+                                </div>
+                            </a>
+                            <br><h3>Contacta a nuestro vendedor para más información,haz click en la imagen </h3>
+                           <br><br> <h3>Ubicación<br><br>
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1NijClZdXJDrXIFBPtFVzq3YvwcY&ehbc=2E312F" width="640" height="480"></iframe>
+                            <h4>(Entregas a domicilio)</h4>
+                            <br><br>
+                            <h3>¿Quiénes somos?</h3><br>
+                            <h4>Somos una micro empresa que se dedica a la compra y reventa de bebidas energéticas</h4> <br><br>
+                            <h3>Historia</h3><br>
+                            <h4>Comenzó como un emprendimiento al descubrir bebidas energéticas que no son vendidas en México</h4> <br><br>
+                            <h3>Visión </h3><br>
+                            <h4>Llegar a la mayor cantidad de clientes posibles, logrando satisfacer sus necesidades y buscando que siempre tengan su preferencia hacia nosotros</h4> <br><br>
+                             <h3>Misión</h3><br>
+                            <h4>La misión es superar la meta de ventas del mes mayo</h4> <br><br>
+                            </center>
+                        `;
+                        marqueeContainer.style.display = 'none'; 
+                        break;
+                    case "4":
+                        document.getElementById("textoMostrado").innerHTML = `
+                             <center>
+                                 <br> <br> <br> <br> <br>
+                            <h2>Créditos</h2><br>
+                             <a href="https://www.instagram.com/tyrondp_/" target="_blank">
+                                <img src="disenador.jpg" alt="Diseñador" class="designer-img">
+                            </a>
+                             <h3>Desarrollado por: Jorge Aaron Galaz Valenzuela </h3><br>
+                            <h3>Última actualización: 18 de junio de 2024</h3><br>
+                            <h3>Contacta al diseñador: <a href="mailto:aarongalaz769@gmail.com">Enviar Email</a><br>
+                             <br>
+                                <form id="nombreForm">
+            <label for="nombre">Tu Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <button type="submit">Enviar</button>
+            </form>
+                            </h3>
+                            </center>
+                        `;
+                        marqueeContainer.style.display = 'none'; 
+                        break;
+                    case "5":
+                        document.getElementById("textoMostrado").innerHTML = `
+                            <center>
+                                 <br> <br> <br> <br> <br>
+                            <h2>Información sobre las bebidas</h2><br>
+                            <a href="https://healthbenefited.com/ghost-energy-nutrition-facts/#:~:text=Ghost%20Energy%20is%20a%20popular%20energy%20drink%20known,it%20offers%20a%20guilt-free%20and%20effective%20energy%20boost." target="_blank">
+                                <img src="ghostg.gif" alt="Ghost Energy" class="gif-link">
+                            </a>
+                            <a href="https://energy-drinks.co/c4-energy/#:~:text=C4%20Energy%20drink%20is%20a%20pre-workout%20drink%20that,beta-alanine%20reduces%20fatigue%2C%20B%20vitamins%20support%20energy%20metabolism." target="_blank">
+                                <img src="c4g.gif" alt="C4 Energy" class="gif-link">
+                            </a><br>
+                            <button id="toggleMarqueeBtn" onclick="toggleMarquee()">Mostrar/Ocultar Marquesina</button><br><br><br><br><br>
+                            </center>
+                        `;
+                        break;
+                    default:
+                        break;
+                }
+                menu.classList.remove('open'); // Oculta el menú en dispositivos móviles
+            });
+        });
+
+        function toggleMarquee() {
+            const marquee = document.getElementById('marquee-container');
+            marquee.style.display = marquee.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
